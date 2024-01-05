@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="row"
+        :style="{
+            marginTop: '200px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            width: '100%' 
+        }">
+            <div v-for="item in products" class="col-12 col-md-4  col-lg-3">
+                <div class="card"
+                :style="{
+                    maxWidth: '320px',
+                    height: '450px',
+                    margin: '10px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    position: 'relative',
+                    alignItems: 'center',
+                    fontSize: '18px',
+                    textAlign: 'center',
+                    color: '#504d4d'
+                }">
+                    <div class="product-wrap"
+                    :style="{
+                        maxWidth: '250px'
+                    }">
+                        <a href="#">
+                            <img class="main" :src="item.images.main" alt="candle"
+                            :style="{
+                                verticalAlign: 'middle',
+                                display: 'block',
+                                width: '100%',
+                                height: 'auto',
+                                borderRadius: '10px'
+                            }">
+                            <img class="small" :src="item.images.small" alt="" 
+                            :style="{
+                                verticalAlign: 'middle',
+                                display: 'block',
+                                width: '100%',
+                                height: 'auto',
+                                borderRadius: '10px',
+                                top: '12rem',
+                                left: '12rem',
+                                position: 'absolute',
+                                maxWidth: '130px'
+                            }">
+                        </a>
+                    </div>
+                    <h2><a href="#" class="text"
+                        :style="{
+                            display: 'block',
+                            textDecoration: 'none',
+                            color: '#504d4d',
+                            padding: '30px', 
+                            fontSize: '16px',
+                            fontWeight: '700'
+                        }">{{item.name}}</a></h2>
+                    <p
+                    :style="{
+                        margin:'0',
+                        display: 'block',
+                        
+                        marginBottom: '1em',
+
+                    }"><span class="old"
+                    :style="{
+                        textDecoration: 'line-through',
+                        paddingRight: '20px',
+                        color: '#797373'
+                    }">{{item.price.old}}</span>{{item.price.discount}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+<script>
+    //新增一個應用application→建立Vue實體(instance)，並掛載(mount)在網頁結點上
+    Vue.createApp({
+        data(){
+            return{
+                products :[
+                    {
+                        name: "夢想系列 | 葡萄柚檸檬",
+                        images: {
+                            main: "./picture/夢想系列_葡萄柚檸檬.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "夢想系列 | 岩蘭薰衣草",
+                        images: {
+                            main: "./picture/夢想系列_岩蘭薰衣草.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "夢想系列 | 苦橙佛手柑",
+                        images: {
+                            main: "./picture/夢想系列_苦橙佛手柑.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "夢想系列 | 胡椒肉桂",
+                        images: {
+                            main: "./picture/夢想系列_胡椒肉桂.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "椰林大道蠟燭 | 椰子",
+                        images: {
+                            main: "./picture/椰林大道蠟燭_椰子.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "寧靜早晨蠟燭 | 梨花",
+                        images: {
+                            main: "./picture/寧靜早晨蠟燭_梨花.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "山林木屋蠟燭 | 紅雪松",
+                        images: {
+                            main: "./picture/山林木屋蠟燭_紅雪松.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "午夜星空蠟燭 | 茉莉",
+                        images: {
+                            main: "./picture/午夜星空蠟燭_茉莉.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "晨露玫瑰蠟燭 | 玫瑰",
+                        images: {
+                            main: "./picture/晨露玫瑰蠟燭_玫瑰.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "綠意森林蠟燭 | 尤加利",
+                        images: {
+                            main: "./picture/綠意森林蠟燭_尤加利.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "浩瀚夜海蠟燭 | 鳶尾花",
+                        images: {
+                            main: "./picture/浩瀚夜海蠟燭_鳶尾花.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "旅人蠟燭 | 菸草",
+                        images: {
+                            main: "./picture/旅人蠟燭_菸草.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "幽深湖林蠟燭 | 松針",
+                        images: {
+                            main: "./picture/幽深湖林蠟燭_松針 .png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    },
+                    {
+                        name: "鄉村生活蠟燭 | 金盞花",
+                        images: {
+                            main: "./picture/鄉村生活蠟燭_金盞花.png",
+                            small: "./picture/Component 4.png"
+                        },
+                        price: {
+                            old: "NT.1,480",
+                            discount: "NT.1,280"
+                        }
+                    }
+            ]
+
+            }
+        }
+    }).mount('#app')//一般用id
+</script>
+</body>
+</html>
